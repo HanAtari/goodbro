@@ -1,0 +1,69 @@
+<html>
+<head>
+  <title>Express</title>
+  <link rel="stylesheet" href="/stylesheets/style3.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="toasty.css" />
+    <link rel="stylesheet" href="penetration.css" />
+</head>
+<body background="images/besshovnaya.png">
+<div id="app" class="backpack">
+    <h1>{{ quiz.title }}</h1>
+    <!-- index is used to check with current question index -->
+    <div v-for="(question, index) in quiz.questions">
+        <!-- Hide all questions, show only the one with index === to current question index -->
+        <div v-show="index === questionIndex">
+            <h2>{{ question.text }}</h2>
+            <ol>
+                <li v-for="response in question.responses">
+                    <label>
+                        <!-- The radio button has three new directives -->
+                        <!-- v-bind:value sets "value" to "true" if the response is correct -->
+                        <!-- v-bind:name sets "name" to question index to group answers by question -->
+                        <!-- v-model creates binding with userResponses -->
+                        <input type="radio"
+                               v-bind:value="response.correct"
+                               v-bind:name="index"
+                               v-model="userResponses[index]"> {{response.text}}
+                    </label>
+                </li>
+            </ol>
+            <!-- The two navigation buttons -->
+            <!-- Note: prev is hidden on first question -->
+            <button v-if="questionIndex > 0" v-on:click="prev">
+                prev
+            </button>
+            <button v-on:click="next" id="toasty-button">
+                next
+            </button>
+        </div>
+    </div>
+    <div v-show="questionIndex === quiz.questions.length">
+        <h2>
+            Тест окончен, а теперь найди свой подарок
+        </h2>
+        <p>
+            Total score: {{ score() }} / {{ quiz.questions.length }}
+        </p>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="jquery.toasty.js"></script>
+<script src="jquery.penetration.js"></script>
+<script>
+
+    $(document).ready( function(){
+
+        $("body").penetration();
+        $("body").toasty();
+
+        $("#toasty-button").click( function(){
+            $("body").toasty('pop');
+        });
+        setTimeout( function(){ $("body").penetration('pop'); }, 30000);
+    });
+</script>
+</body>
+<script src="/javascripts/script2.js"></script>
+</html>
