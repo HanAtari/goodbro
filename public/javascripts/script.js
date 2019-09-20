@@ -51,6 +51,6 @@ function setGood() {
     if (document.getElementById("one1").value === 'Nursultan' && document.getElementById("one2").value === 'kazahisila') {
         document.location.href = '/users.html'
     } else {
-        alert("Куда тыкаешь, котак ебыный?");
+        alert("Шешең амы, қотақ ебыный");
     }
 }
