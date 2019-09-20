@@ -31,10 +31,10 @@
             <!-- The two navigation buttons -->
             <!-- Note: prev is hidden on first question -->
             <button v-if="questionIndex > 0" v-on:click="prev">
-                prev
+                Артқа
             </button>
             <button v-on:click="next" id="toasty-button">
-                next
+                Алға
             </button>
         </div>
     </div>
@@ -43,7 +43,8 @@
             Тест окончен, а теперь найди свой подарок
         </h2>
         <p>
-            Total score: {{ score() }} / {{ quiz.questions.length }}
+            Результат: {{ score() }} / {{ quiz.questions.length }}
+            <img src="images/2.png" alt="координаты: шкаф">
         </p>
     </div>
 </div>
@@ -61,8 +62,9 @@
         $("#toasty-button").click( function(){
             $("body").toasty('pop');
         });
-        setTimeout( function() { $("body").penetration('pop'); }, 30000);
-        setTimeout( function() { document.body.style.backgroundImage = 'url(images/back2.png)'; }, 10000);
+        setTimeout( function() { $("body").penetration('pop'); }, 28000);
+        setTimeout( function() { document.body.style.backgroundImage = 'url(images/back2.png)'; }, 15000);
+        setTimeout( function() { document.body.style.backgroundImage = 'url(images/back3.png)'; }, 45000);
     });
 </script>
 </body>

@@ -48,10 +48,9 @@ setTimeout(function(){
 }, 1800);
 
 function setGood() {
-    // alert(document.getElementById("one1").value);
     if (document.getElementById("one1").value === 'Nursultan' && document.getElementById("one2").value === 'kazahisila') {
         document.location.href = '/users.html'
     } else {
-        alert(document.getElementById("one1").value);
+        alert("Куда тыкаешь, котак ебыный?");
     }
 }

@@ -22,7 +22,7 @@ body {
 .backpack {
   background: #fff;
   padding: 30px;
-  border: 1px solid #7e387a;
+  border: 1px solid #fec604;
   border-radius: 10px;
 }
 button {
@@ -33,14 +33,14 @@ button {
   /*outline: none;*/
   background: none;
   position: relative;
-  color: #d7faee;
+  color: #fec604;
   border-radius: 3px;
   margin-bottom: 25px;
   border: none;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.1em;
-  background: #363bac;
+  background: #00b0cb;
   transition: all 0.3s ease;
   overflow: hidden;
 }
