@@ -45,3 +45,21 @@ button {
   overflow: hidden;
 }
 
+.final {
+    width: 400px;
+    height: 600px;
+}
+
+
+.rotateimg {
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+from{
+    transform:rotate(360deg);
+}
+}

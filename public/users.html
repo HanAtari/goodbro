@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="penetration.css" />
 </head>
 <body background="images/back.jpg">
+<img src="/images/rotat.png" alt="" class="rotateimg" />
 <div id="app" class="backpack">
     <h1>{{ quiz.title }}</h1>
     <!-- index is used to check with current question index -->
@@ -40,16 +41,19 @@
     </div>
     <div v-show="questionIndex === quiz.questions.length">
         <h2>
-            Тест окончен, а теперь найди свой подарок
+            Тест окончен, вот координаты твоей закладки
         </h2>
         <p>
             Результат: {{ score() }} / {{ quiz.questions.length }}
-            <img src="images/2.png" alt="координаты: шкаф">
         </p>
+        <img src="images/final.jpg" alt="координаты: шкаф" class="final">
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<img src="/images/rotat.png" alt="" class="rotateimg" />
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jqueryrotate.2.1.js"></script>
 <script src="jquery.toasty.js"></script>
 <script src="jquery.penetration.js"></script>
 <script>
@@ -65,7 +69,9 @@
         setTimeout( function() { $("body").penetration('pop'); }, 28000);
         setTimeout( function() { document.body.style.backgroundImage = 'url(images/back2.png)'; }, 15000);
         setTimeout( function() { document.body.style.backgroundImage = 'url(images/back3.png)'; }, 45000);
+
     });
+
 </script>
 </body>
 <script src="/javascripts/script2.js"></script>
